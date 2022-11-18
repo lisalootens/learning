@@ -21,3 +21,20 @@ AND replacement_cost BETWEEN 5 AND 15;
 SELECT COUNT(*) FROM film
 WHERE title LIKE '%Truman%';
 
+
+-- How many payments did each staff member handle?
+SELECT staff_id, COUNT(payment_id) 
+FROM payment
+GROUP BY staff_id;
+
+-- What is the average replacement cost per MPAA rating?
+SELECT rating, ROUND(AVG(replacement_cost), 2) 
+FROM film
+GROUP BY rating;
+
+-- What are the customer IDs of the top 5 customers by total spend?
+SELECT customer_id, SUM(amount) 
+FROM payment
+GROUP BY customer_id
+ORDER BY SUM(amount) DESC
+LIMIT 5;
