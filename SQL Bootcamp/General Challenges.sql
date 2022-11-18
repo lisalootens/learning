@@ -52,3 +52,17 @@ FROM payment
 WHERE staff_id = 2
 GROUP BY customer_id
 HAVING SUM(amount) > 100;
+
+
+-- What are the emails of the customers who live in California?
+SELECT email FROM address
+INNER JOIN customer ON address.address_id = customer.address_id
+WHERE district = 'California';
+
+-- Get a list of all the movies 'Nick Wahlberg' has been in.
+SELECT title, first_name, last_name 
+FROM film
+LEFT JOIN film_actor ON film.film_id = film_actor.film_id
+LEFT JOIN actor ON actor.actor_id = film_actor.actor_id
+WHERE first_name = 'Nick' 
+AND last_name = 'Wahlberg';
