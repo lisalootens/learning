@@ -66,3 +66,12 @@ LEFT JOIN film_actor ON film.film_id = film_actor.film_id
 LEFT JOIN actor ON actor.actor_id = film_actor.actor_id
 WHERE first_name = 'Nick' 
 AND last_name = 'Wahlberg';
+
+
+-- Q: During which months did payments occur? A: May, February, April and March.
+SELECT DISTINCT TO_CHAR(payment_date, 'MONTH') 
+FROM payment; 
+
+-- Q: How many payments occurred on a monday? A: 2949
+SELECT COUNT(*) FROM payment
+WHERE EXTRACT(dow FROM payment_date) = 1;
