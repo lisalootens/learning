@@ -14,7 +14,30 @@
     info is: jsalk@school.org and a phone number of 777-555-4321.
 */
 
--- 1. Create database
+-- 1. Create tables
+CREATE TABLE teachers (
+	teacher_id SERIAL PRIMARY KEY,
+	first_name VARCHAR(50) NOT NULL,
+	last_name VARCHAR(50) NOT NULL,
+	homeroom_number SMALLINT,
+	department VARCHAR(50),
+	email VARCHAR(20) UNIQUE,
+	phone VARCHAR(20) UNIQUE
+);
 
+CREATE TABLE students (
+	student_id SERIAL PRIMARY KEY,
+	first_name VARCHAR(50) NOT NULL,
+	last_name VARCHAR(50) NOT NULL,
+	homeroom_number SMALLINT,
+	email VARCHAR(20) UNIQUE,
+	phone VARCHAR(20) UNIQUE NOT NULL,
+	graduation_year SMALLINT
+);
 
 -- 2. Insert data
+INSERT INTO students(first_name, last_name, homeroom_number, phone, graduation_year)
+VALUES ('Mark', 'Watney', 5, '7775551234', 2035);
+
+INSERT INTO teachers(first_name, last_name, homeroom_number, department, email, phone)
+VALUES ('Jonas', 'Salk', 5, 'Biology', 'jsalk@school.org', '7775554321');
