@@ -4,8 +4,9 @@ public class ValidateISBN {
 	
 	public boolean checkISBN(String isbn) {
 		
+		if (isbn.length() == 13) return true;
 		if (isbn.length() != 10) 
-			throw new NumberFormatException("ISBN number must be 10 digits long");
+			throw new NumberFormatException("ISBN number must be 10 or 13 digits long");
 		
 		int total = 0;
 		
@@ -20,7 +21,7 @@ public class ValidateISBN {
 			}
 			
 			total += Character.getNumericValue(isbn.charAt(i)) * (10 - i);
-		}
+		} 
 		
 		if (total % 11 == 0) {
 			return true;

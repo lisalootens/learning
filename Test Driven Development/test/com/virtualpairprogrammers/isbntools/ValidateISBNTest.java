@@ -34,7 +34,18 @@ class ValidateISBNTest {
 	void checkForTenDigitISBN() {
 		ValidateISBN validator = new ValidateISBN();
 		assertThrows(NumberFormatException.class, 
-				() -> {validator.checkISBN("123456789"); } );		
+				() -> {validator.checkISBN("123456789"); } );
+	}
+	
+	@Test
+	void checkFor13DigitISBN() {
+		ValidateISBN validator = new ValidateISBN();
+		boolean result = validator.checkISBN("9781529105100");
+		
+		assertTrue(result);
+		
+		assertThrows(NumberFormatException.class,
+				() -> {validator.checkISBN("97815291051001");} );		
 	}
 	
 	@Test
