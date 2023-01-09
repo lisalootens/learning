@@ -6,6 +6,7 @@
 *.classpath
 *.project
 *.class
+*.gitignore
 
 ### Other ###
 *.tar
