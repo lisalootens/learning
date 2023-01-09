@@ -19,7 +19,7 @@ public class ValidateISBN {
 				}
 			}
 			
-			total += isbn.charAt(i) * (10 - i);
+			total += Character.getNumericValue(isbn.charAt(i)) * (10 - i);
 		}
 		
 		if (total % 11 == 0) {
