@@ -2,7 +2,10 @@
 .DS_Store
 
 ### Eclipse ###
-.metadata
+*.metadata
+*.classpath
+*.project
+*.class
 
 ### Other ###
 *.tar
