@@ -18,8 +18,10 @@ class ValidateISBNTest {
 	// Some valid ISBN numbers end with a X
 	@Test
 	void ISBNNumberEndingInXIsValid() {
-		fail()
-;	}
+		ValidateISBN validator = new ValidateISBN();
+		boolean result = validator.checkISBN("012000030X");
+		assertTrue(result);
+	}
 	
 	@Test
 	void checkAnInvalidISBN() {
