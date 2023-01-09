@@ -15,6 +15,12 @@ class ValidateISBNTest {
 		assertTrue(result, "second value");
 	}
 	
+	// Some valid ISBN numbers end with a X
+	@Test
+	void ISBNNumberEndingInXIsValid() {
+		fail()
+;	}
+	
 	@Test
 	void checkAnInvalidISBN() {
 		ValidateISBN validator = new ValidateISBN();
