@@ -5,6 +5,14 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 class StockManagementTests {
+	
+	ExternalISBNDataService testService = new ExternalISBNDataService() {
+		
+		@Override
+		public Book lookup(String isbn) {			
+			return new Book(isbn, "Of Mice And Men", "J. Steinbeck");
+		}
+	};
 
 	@Test
 	void testCanGetACorrectLocatorCode() {
