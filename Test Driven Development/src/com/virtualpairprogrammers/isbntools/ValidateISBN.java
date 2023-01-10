@@ -37,12 +37,8 @@ public class ValidateISBN {
 			total += Character.getNumericValue(isbn.charAt(i)) * (SHORT_ISBN_LENGTH - i);
 		} 
 
-		if (total % SHORT_ISBN_MULTIPLIER == 0) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		return total % SHORT_ISBN_MULTIPLIER == 0;
+		
 	}
 
 	private boolean isThisAValidLongISBN(String isbn) {
@@ -57,12 +53,7 @@ public class ValidateISBN {
 			}
 		}
 		
-		if (total % LONG_ISBN_MULTIPLIER == 0) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		return total % LONG_ISBN_MULTIPLIER == 0;
 	}
 
 }
