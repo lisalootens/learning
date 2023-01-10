@@ -10,7 +10,6 @@
 
 ### Maven ###
 *.mvn/wrapper/maven-wrapper.jar
-*.xml
 *.cmd
 *.properties
 
