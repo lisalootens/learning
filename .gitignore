@@ -10,4 +10,6 @@
 
 ### Other ###
 *.tar
+*.jar
 /bin/
+/lib/
