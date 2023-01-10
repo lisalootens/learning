@@ -8,8 +8,11 @@
 *.class
 *.gitignore
 
-target/
-!.mvn/wrapper/maven-wrapper.jar
+### Maven ###
+*.mvn/wrapper/maven-wrapper.jar
+*.xml
+*.cmd
+*.properties
 
 ### STS ###
 .apt_generated
@@ -39,3 +42,5 @@ nbdist/
 /bin/
 /lib/
 *.pdf
+*.db
+*.jsp
